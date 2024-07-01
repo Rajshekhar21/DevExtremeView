@@ -27,12 +27,129 @@
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-node-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+.dx-treeview-node-container{
+  padding: 5px;
+}
+.dx-treeview-node, .dx-treeview .dx-treeview-node.dx-treeview-root-node {
+  position: relative;
+  padding-inline-start: 50px;
+}
+
+.dx-treeview-item {
+  height: 50px;
+  position: relative;
+  padding: 0;
+  z-index: 100;
+  margin-top: 15px;
+  border: 1px solid black;
+  pointer-events: none;
+  width: max-content;
+  min-width: 250px;
+}
+
+.dx-treeview-node::before, 
+.dx-treeview-node::after, 
+.dx-treeview-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 25px;
+  width: 2px;
+  background: red;
+}
+.dx-treeview-node::before {
+  top: -20px;
+  bottom: auto;
+  height: 48px;
+}
+.dx-treeview-node::after {
+  top: 25px;
+  bottom:0;
+  height: auto;
+}
+
+.dx-treeview-node:last-child:after{
+  display: none;
+}
+.dx-treeview-node:first-child:before{
+  display: none;
+}
+.dx-treeview-node .dx-treeview-node:first-child:before{
+  display: block;
+}
+.dx-treeview-item i {
+  position: absolute;
+  left: -36px;
+  border-radius: 50%;
+  font-style: 13px;
+  border: 1px solid gray;
+  background-color:white;
+  pointer-events: all;
+}
+.dx-treeview-item-without-checkbox.dx-state-focused>.dx-treeview-item {
+  color:black;
+}
+.dx-treeview-item::before {
+  width: 25px;
+  left: -25px;
+  height: 2px;
+  top: 25px;
+  z-index: -1;
+}
+
+.item-box {
+  border: none;
+  height: 50px;
+  line-height: 50px;
+  cursor: initial;
+  padding-right: 20px;
+}
+.item-box > .item-drag{
+  display: inline-block;
+  margin-right: 10px;
+  width: 50px;
+  background-color: gray;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  cursor: move;
+  pointer-events: all;
+
+}
+.dx-treeview-expander-icon-stub {
+  display: none;
+}
+/* .dx-treeview-node::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.dx-treeview-node::after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 20px;
+  border-top: 1px solid #ccc;
+} */
+
+/* .dx-treeview-item:first-child::before {
+  top: 15px; 
+  /* height: 1px;
+  width: 35px;
+}
+
+/* .dx-treeview-item:last-child::before {
+  height: 1px;
+  width: 35px;
+} */
