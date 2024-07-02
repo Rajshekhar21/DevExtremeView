@@ -143,25 +143,27 @@ const App = () => {
   };
 
   const toolbar = (
-    <div className="form">
+    <div>
       <div className="drive-panel">
-        <div>
-          <button onClick={expandAll}>Expand All</button>
-          <button onClick={collapseAll}>Collapse All</button>
-          <input
+          <div className='button-group'>
+            <button onClick={expandAll}>Expand All</button>
+            <button onClick={collapseAll}>Collapse All</button>
+          </div>
+          <input className='search-box'
             type="text"
             value={searchQuery}
             onChange={onSearchChange}
             placeholder="Search..."
           />
-          <button onClick={goToPrevResult} disabled={searchResults.length === 0}>
-            &lt;
-          </button>
-          <button onClick={goToNextResult} disabled={searchResults.length === 0}>
-            &gt;
-          </button>
-          <span>{`${searchResults.length > 0 ? currentIndex + 1 : 0} / ${searchResults.length}`}</span>
-        </div>
+          <div class="nav-buttons">
+            <button onClick={goToPrevResult} disabled={searchResults.length === 0}>
+              &lt;
+            </button>
+            <button onClick={goToNextResult} disabled={searchResults.length === 0}>
+              &gt;
+            </button>
+            <span>{`${searchResults.length > 0 ? currentIndex + 1 : 0} / ${searchResults.length}`}</span>
+          </div>
       </div>
     </div>
   )

@@ -60,7 +60,7 @@
   position: absolute;
   left: 25px;
   width: 2px;
-  background: red;
+  background: black;
 }
 .dx-treeview-node::before {
   top: -20px;
@@ -124,32 +124,95 @@
 .dx-treeview-expander-icon-stub {
   display: none;
 }
-/* .dx-treeview-node::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  border-left: 1px solid #ccc;
+
+/* drive panel */
+.drive-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 40px;
+}
+/* Search Box Style */
+.search-box {
+  width: 200px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.dx-treeview-node::after {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  width: 20px;
-  border-top: 1px solid #ccc;
-} */
-
-/* .dx-treeview-item:first-child::before {
-  top: 15px; 
-  /* height: 1px;
-  width: 35px;
+.search-box:focus {
+  border-color: #007BFF;
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+/* button group css */
+.button-group {
+  display: block;
+  width: max-content;
+}
+.button-group button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.2s;
 }
 
-/* .dx-treeview-item:last-child::before {
-  height: 1px;
-  width: 35px;
-} */
+.button-group button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* nav buttons */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.nav-buttons button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s, box-shadow 0.2s;
+}
+
+.nav-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.nav-buttons button:hover:not(:disabled) {
+  background-color: #0056b3;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-buttons button:active:not(:disabled) {
+  background-color: #004085;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-buttons span {
+  font-size: 16px;
+  margin-left: 10px;
+}
